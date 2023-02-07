@@ -1,7 +1,7 @@
-{% extends'rango/base.html' %} 
-{% loadstaticfiles %}
+{% extends 'rango/base.html' %} 
+{% load staticfiles %}
 
-{% blocktitle_block %} 
+{% block title_block %} 
     {% if category %}
         {{ category.name }}
     {% else %}
@@ -9,7 +9,7 @@
     {% endif %}
 {% endblock %}
 
-{% blockbody_block %}
+{% block body_block %}
     {% if category %}
 
     <h1>{{ category.name }}</h1>
@@ -20,7 +20,7 @@
       {% for page in pages %}
 
       <li><a href="{{ page.url }}">{{ page.title }}</a></li>
-      
+
       {% endfor %}
     </ul>
 
