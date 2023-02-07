@@ -1,13 +1,11 @@
-<!DOCTYPE html>
+{% extends 'rango/base.html' %}
 
 {% load staticfiles %}
-<html>
 
-     <head>
-     	<title>Rango</title>
-     </head>
-
-     <body>
+{% block title_block %}
+    Homepage
+{% endblock %}
+{% block body_block %}
          <h1>Rango says ...</h1>
 
          <div>
@@ -30,7 +28,6 @@
             {% endif %}
           </div>
 
-
           <div>
             <h2>Most Viewed Pages</h2>
             {% if pages %}
@@ -47,13 +44,7 @@
             {% endif %}
           </div>
 
-
           <div>          
-              <a href="{% url 'rango:about' %}">About</a><br />
-              <img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango" />
-              <ahref="/rango/add_category/">AddaNewCategory</a><br/>
-              
+              <img src="{% static 'images/rango.jpg' %}" alt="Picture of Rango" />         
           </div>
-     </body>
-
-</html>        	
+{% endblock %}     	
